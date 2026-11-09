@@ -1,4 +1,40 @@
 @baseUrl = http://localhost:3000
 
-###
+### API
 GET {{baseUrl}}/api
+
+### Listar autores
+GET {{baseUrl}}/api/autores
+
+### Obtener un autor
+GET {{baseUrl}}/api/autores/1
+
+### Posts de un autor
+GET {{baseUrl}}/api/autores/1/posts
+
+### Crear autor
+POST {{baseUrl}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Marta Ruiz",
+  "email": "marta.{{$timestamp}}@example.com",
+  "imagen": "https://example.com/imagenes/marta.jpg"
+}
+
+### Listar posts
+GET {{baseUrl}}/api/posts
+
+### Obtener un post
+GET {{baseUrl}}/api/posts/1
+
+### Crear post
+POST {{baseUrl}}/api/posts
+Content-Type: application/json
+
+{
+  "titulo": "Rutas con Express",
+  "descripcion": "Como organizar un API con el prefijo /api.",
+  "categoria": "Backend",
+  "autor_id": 1
+}
